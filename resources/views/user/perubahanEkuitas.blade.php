@@ -17,6 +17,9 @@
         setlocale(LC_ALL, 'id_ID');
         $modal_awal = 0;
         $prive = 0;
+        // Perubahan 
+        $penambahan_modal = 0;
+
     @endphp
     <div class="container-fluid">
         <div class="row">
@@ -71,7 +74,9 @@
                                     <button type="button" class="btn btn-primary" id="search">Cari</button>
                                 </div>
                                 <div class="col-md-6 mt-4 text-right">
-                                    <a href="{{route('export.perubahan_ekuitas', ['year' => $dt, 'month' => $month])}}" class="btn btn-primary" target="_blank" id="export">Export</a>
+                                    <a href="{{route('export.perubahan_ekuitas', ['year' => $dt, 'month' => $month])}}" class="btn btn-primary" target="_blank" id="export">PDF</a>
+                                    {{-- Penambahan --}}
+                                    <a href="{{route('export.excel.perubahan_ekuitas', ['year' => $dt, 'month' => $month])}}" class="btn btn-primary" target="_blank" id="export">EXCEL</a>
                                 </div>
                             </div>
                         </div>
@@ -101,6 +106,27 @@
                                             @endfor
                                         </td>
                                     </tr>
+                                    {{-- Penambahan --}}
+                                    @for ($i = 1; $i <= sizeof($equityArray); $i++)
+                                        @if ($equityArray[$i]['name'] == "Penambahan Modal")
+                                            <tr>
+                                                <td style="width:60%;padding-left: 1.5rem!important;">
+                                                    {{ $equityArray[$i]['name'] }}
+                                                </td>
+                                                <td class="text-right" style="width:10%">
+                                                    @if ($equityArray[$i]['ending balance'] < 0)
+                                                        -Rp{{strrev(implode('.',str_split(strrev(strval(-1*$equityArray[$i]['ending balance'])),3)))}}
+                                                    @else
+                                                        Rp{{strrev(implode('.',str_split(strrev(strval($equityArray[$i]['ending balance'])),3)))}}
+                                                    @endif
+                                                    @php
+                                                        $penambahan_modal += $equityArray[$i]['ending balance'];
+                                                    @endphp
+                                                </td>
+                                                <td></td>
+                                            </tr>
+                                        @endif
+                                    @endfor
                                     <tr>
                                         <td style="width:60%;padding-left: 1.5rem!important;">
                                             Laba bersih
@@ -115,7 +141,8 @@
                                         <td></td>
                                     </tr>
                                     @for ($i = 1; $i <= sizeof($equityArray); $i++)
-                                        @if ($equityArray[$i]['name'] == "Prive")
+                                    {{-- Perubahan --}}
+                                        @if ($equityArray[$i]['name'] == "Bagi Hasil ke Desa")
                                             <tr>
                                                 <td style="width:60%;padding-left: 1.5rem!important;">
                                                     {{ $equityArray[$i]['name'] }}
@@ -140,10 +167,11 @@
                                         </td>
                                         <td></td>
                                         <td style="width:10%" class="text-right">
+                                            {{-- Perubahan --}}
                                             @if ($saldo_berjalan >= 0)
-                                                Rp{{strrev(implode('.',str_split(strrev(strval($saldo_berjalan - $prive)),3)))}}
+                                                Rp{{strrev(implode('.',str_split(strrev(strval($saldo_berjalan - $prive + $penambahan_modal)),3)))}}
                                             @else
-                                                Rp{{strrev(implode('.',str_split(strrev(strval($saldo_berjalan + $prive)),3)))}}
+                                                Rp{{strrev(implode('.',str_split(strrev(strval($saldo_berjalan + $prive - $penambahan_modal)),3)))}}
                                             @endif
                                         </td>
                                     </tr>
@@ -153,10 +181,11 @@
                                         </td>
                                         <td></td>
                                         <td class="text-right" style="width:10%">
+                                            {{-- Perubahan --}}
                                             @if ($saldo_berjalan >= 0)
-                                                Rp{{strrev(implode('.',str_split(strrev(strval($modal_awal + $saldo_berjalan - $prive)),3)))}}
+                                                Rp{{strrev(implode('.',str_split(strrev(strval($modal_awal + $saldo_berjalan - $prive + $penambahan_modal)),3)))}}
                                             @else
-                                                Rp{{strrev(implode('.',str_split(strrev(strval($modal_awal - $saldo_berjalan + $prive)),3)))}}
+                                                Rp{{strrev(implode('.',str_split(strrev(strval($modal_awal - $saldo_berjalan + $prive - $penambahan_modal)),3)))}}
                                             @endif
                                         </td>
                                     </tr>

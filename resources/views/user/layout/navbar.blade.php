@@ -16,7 +16,11 @@
                     <a class="nav-link" href="" id="navbarDropdownBusiness" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false">
                         <i class="material-icons">business</i>
-                        <span class="text-dark" style="margin-bottom: 0px;">{{$getBusiness->business_name}} (AKTIF)</span>
+                        <span class="text-dark" style="margin-bottom: 0px;">
+                            @if ($getBusiness->business_name != null)
+                            {{$getBusiness->business_name}} (AKTIF)
+                            @endif
+                        </span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBusiness">
                         @foreach ($business as $item)

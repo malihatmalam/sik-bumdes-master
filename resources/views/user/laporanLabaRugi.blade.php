@@ -69,7 +69,8 @@
                                     <button type="button" class="btn btn-primary" id="search">Cari</button>
                                 </div>
                                 <div class="col-md-6 mt-4 text-right">
-                                    <a href="{{route('export.laba_rugi', ['year' => $dt, 'month' => $month])}}" class="btn btn-primary" target="_blank" id="export">Export</a>
+                                    <a href="{{route('export.laba_rugi', ['year' => $dt, 'month' => $month])}}" class="btn btn-primary" target="_blank" id="export">PDF</a>
+                                    <a href="{{route('export.excel.laba_rugi', ['year' => $dt, 'month' => $month])}}" class="btn btn-primary" target="_blank" id="export">Excel</a>
                                 </div>
                             </div>
                         </div>

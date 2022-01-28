@@ -85,9 +85,9 @@ class DashboardController extends Controller
                 
                 foreach($jurnals as $jurnal){
                     if($jurnal->position == "Debit"){
-                        $sum += $jurnal->detail->amount;
+                        $sum += $jurnal->amount;
                     } else if($jurnal->position == "Kredit"){
-                        $sum -= $jurnal->detail->amount;
+                        $sum -= $jurnal->amount;
                     }
                 }
             } else {
@@ -124,9 +124,9 @@ class DashboardController extends Controller
                         })->get();
                         foreach($jurnals as $jurnal){
                             if ($jurnal->position == $position) {
-                                $endingBalance += $jurnal->detail->amount;
+                                $endingBalance += $jurnal->amount;
                             }else {
-                                $endingBalance -= $jurnal->detail->amount;
+                                $endingBalance -= $jurnal->amount;
                             }
                         }
                     } else {
@@ -221,9 +221,9 @@ class DashboardController extends Controller
                 
                 foreach($jurnals as $jurnal){
                     if($jurnal->position == "Debit"){
-                        $cash_in += $jurnal->detail->amount;
+                        $cash_in += $jurnal->amount;
                     } else if($jurnal->position == "Kredit"){
-                        $cash_out += $jurnal->detail->amount;
+                        $cash_out += $jurnal->amount;
                     }
                 }
             } else {
@@ -310,9 +310,9 @@ class DashboardController extends Controller
                 
                 foreach($jurnals as $jurnal){
                     if($jurnal->position == "Debit"){
-                        $cash_in += $jurnal->detail->amount;
+                        $cash_in += $jurnal->amount;
                     } else if($jurnal->position == "Kredit"){
-                        $cash_out += $jurnal->detail->amount;
+                        $cash_out += $jurnal->amount;
                     }
                 }
             } else {

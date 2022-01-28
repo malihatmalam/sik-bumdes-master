@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--========== BOX ICONS ==========-->
+        <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+        <!--========== CSS ==========-->
+        <link href="{{url('/')}}/BUMDES Landing/assets/css/styles.css" rel="stylesheet" />
+        {{-- <link rel="stylesheet" href="assets/css/styles.css"> --}}
+
+        <!--========== ICON ==========-->
+        <link rel="shortcut icon" href="{{url('/')}}/assets/img/shortcut.png">
+        {{-- <link rel="shortcut icon" href="material/shortcut.png" type="image/x-icon"> --}}
+
+        <title>SIK BUMDes</title>
+    </head>
+    <body>
+        <!--========== SCROLL TOP ==========-->
+        <a href="#" class="scrolltop" id="scroll-top">
+            <i class='bx bx-up-arrow-alt scrolltop__icon'></i>
+        </a>
+        
+        <!--========== HEADER ==========-->
+        <header class="l-header" id="header">
+            <nav class="nav bd-container">
+                <a href="#" class="nav__logo">SIK BUMDes</a>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
+                        <li class="nav__item"><a href="#about" class="nav__link">Benefit</a></li>
+                        <li class="nav__item"><a href="#feature" class="nav__link">Feature</a></li>
+                        <li class="nav__item"><a href="{{ route('login') }}" class="nav__link button">Login</a></li>
+
+                        <!-- <li><i class='bx bx-toggle-left change-theme' id="theme-button"></i></li> -->
+                    </ul>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-grid-alt'></i>
+                </div>
+            </nav>
+        </header>
+
+        <main class="l-main">
+            <!--========== HOME ==========-->
+            <section class="home" id="home">
+                <div class="home__container bd-container bd-grid">
+                    <div class="home__img">
+                        <img src="{{url('/')}}/BUMDES Landing/material/home.png" alt="">
+                    </div>
+
+                    <div class="home__data">
+                        <h1 class="home__title">Kelola BUMDes Dengan Mudah</h1>
+                        <p class="home__description">Tidak perlu khawatir untuk management badan usaha milik desa anda. Dengan SIK BUMDes semua jadi mudah.</p>
+                        <a href="{{ route('login') }}" class="button">Mulai Sekarang</a>
+                    </div>   
+                </div>
+            </section>
+
+            <!--========== ABOUT ==========-->
+            <section class="share section bd-container" id="about">
+                <div class="share__container bd-grid">
+                    <div class="share__data">
+                        <h2 class="section-title-center">Tentang kami <br> (SIK BUMDes)</h2>
+                        <p class="share__description">SIK BUMDes merupakan platform pengelolaan dan
+                            pembuatan laporan keuangan Badan Usaha Milik
+                            Desa (BUMDes).</p>
+                            <br>
+                            <p>
+                                <strong>Keunggulan Kami :</strong> 
+                            </p>
+                            <br>
+                            <div class="about__details">
+                                <p class="about__details-description">
+                                    <i class="ri-checkbox-fill about__details-icon"></i>
+                                    Mudah digunakan dan dipahami.
+                                </p>
+                                <p class="about__details-description">
+                                    <i class="ri-checkbox-fill about__details-icon"></i>
+                                    Dapat mengelola keuangan lebih dari satu entitas bisnis.
+                                </p>
+                                <p class="about__details-description">
+                                    <i class="ri-checkbox-fill about__details-icon"></i>
+                                    Platform dapat beradaptasi mengikuti zaman.
+                                </p>
+                                <p class="about__details-description">
+                                    <i class="ri-checkbox-fill about__details-icon"></i>
+                                    Tersedia versi mobile.
+                                </p>
+                            </div>
+                        <!-- <a href="#" class="button">Send a Gift</a> -->
+                    </div>
+
+                    <div class="share__img">
+                        <img src="{{url('/')}}/BUMDES Landing/material/about.png" alt="">
+                    </div>
+                </div>
+            </section>
+
+            <!--========== FEATURE ==========-->
+            <section class="decoration section bd-container" id="feature">
+                <h2 class="section-title">Fitur - Fitur <br> SIK BUMDes</h2>
+                <div class="decoration__container bd-grid">
+                    <div class="decoration__data">
+                        <img src="{{url('/')}}/BUMDES Landing/material/shops.png" alt="" class="decoration__img">
+                        <h3 class="decoration__title">Kelola Unit Usaha</h3>
+                        <a class="button button-link">Profil, Managemen Karyawan, Managemen Bisnis</a>
+                    </div>
+
+                    <div class="decoration__data">
+                        <img src="{{url('/')}}/BUMDES Landing/material/accounts.png" alt="" class="decoration__img">
+                        <h3 class="decoration__title">Kelola Akuntansi Usaha</h3>
+                        <a class="button button-link">Akun, Neraca Awal, Jurnal
+                            Umum, Buku Besar, Neraca Saldo</a>
+                    </div>
+
+                    <div class="decoration__data">
+                        <img src="{{url('/')}}/BUMDES Landing/material/document.png" alt="" class="decoration__img">
+                        <h3 class="decoration__title">Kelola Laporan Usaha</h3>
+                        <a class="button button-link">Laporan Laba Rugi, Neraca, Laporan Perubahan Ekuitas</a>
+                    </div>
+
+                    <div class="decoration__data">
+                        <img src="{{url('/')}}/BUMDES Landing/material/dollar.png" alt="" class="decoration__img">
+                        <h3 class="decoration__title">Kelola Anggaran</h3>
+                        <a class="button button-link">Rencana Anggaran dan Realitas Anggaran</a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!--========== FOOTER ==========-->
+        <footer class="footer section">
+            <div class="footer__container bd-container bd-grid">
+                <div class="footer__content">
+                    <h3 class="footer__title">
+                        <a href="#" class="footer__logo">SIK BUMDes</a>
+                    </h3>
+                </div>
+
+                <div class="footer__content">
+                    <h3 class="footer__title">Alamat Kami</h3>
+                    <ul>
+                        <li><a href="#" class="footer__link">Gedung SV UGM, Sekip Unit 1 </a></li>
+                        <li><a href="#" class="footer__link">Jl. Persatuan, Caturtunggal</a></li>
+                        <li><a href="#" class="footer__link">Daerah Istimewa Yogyakarta</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__content">
+                    <h3 class="footer__title">Kontak Kami</h3>
+                    <ul>
+                        <li><a href="#" class="footer__link">irkham@ugm.ac.id</a></li>
+                        <li><a href="#" class="footer__link">faiz@ugm.ac.id</a></li>
+                        <!-- <li><a href="#" class="footer__link">Our mision</a></li> -->
+                    </ul>
+                </div>
+
+                <!-- <div class="footer__content">
+                    <h3 class="footer__title">Social</h3>
+                    <a href="#" class="footer__social"><i class='bx bxl-facebook-circle '></i></a>
+                    <a href="#" class="footer__social"><i class='bx bxl-twitter'></i></a>
+                    <a href="#" class="footer__social"><i class='bx bxl-instagram-alt'></i></a>
+                </div> -->
+            </div>
+
+            <p class="footer__copy">&#169; 2021 Tim Pengembang SIK BUMDes. All right reserved</p>
+        </footer>
+
+        <!--========== SCROLL REVEAL ==========-->
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+        <!--========== MAIN JS ==========-->
+        <script src="{{url('/')}}/BUMDES Landing/assets/js/main.js"></script>
+    </body>
+</html>

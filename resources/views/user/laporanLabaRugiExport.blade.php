@@ -61,7 +61,7 @@
 <div>
     <div>
         <div>
-            <h3 class="text-center company uppercase">{{$company->name}}</h3>
+            <h3 class="text-center company uppercase">{{ $company->name }}</h3>
             <h3 class="text-center company">Laba Rugi</h3>
             @php
                 $dateObj   = DateTime::createFromFormat('!m', $month);

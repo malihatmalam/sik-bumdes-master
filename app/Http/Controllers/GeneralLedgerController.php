@@ -73,7 +73,7 @@ class GeneralLedgerController extends Controller
         if(!$checkAccount->initialBalance()->whereYear('date', $year)->first()){
             $log['date'] = '';    
         } else {
-            $log['date'] = $checkAccount->initialBalance()->first()->date;
+            $log['date'] = $checkAccount->initialBalance()->whereYear('date', $year)->first()->date;
         }
 
         $data = GeneralJournal::with('account.classification.parent', 'detail')

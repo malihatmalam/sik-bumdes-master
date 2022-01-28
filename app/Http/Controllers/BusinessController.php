@@ -108,13 +108,13 @@ class BusinessController extends Controller
             array('71'=>'Biaya Lainnya')
         );
         $akun_array = array(
-            array("Kas"=>array("1110"=>"Debit"), "Kas di bank"=> array("1111"=>"Debit"), "Piutang Dagang" => array("1120" => "Debit"), "Sewa Dibayar Dimuka"=>array("1130"=>"Debit")),
+            array("Kas"=>array("1110"=>"Debit"), "Kas di bank"=> array("1111"=>"Debit"), "Piutang Usaha" => array("1120" => "Debit"), "Sewa Dibayar Dimuka"=>array("1130"=>"Debit")),
             array("Tanah"=>array("1210"=>"Debit"), "Gedung"=> array("1220"=>"Debit"), "Akumulasi Penyusutan Gedung" => array("1220-1"=>"Kredit"), "Kendaraan" => array("1230"=>"Debit"), 
                 "Akumulasi Penyusutan Kendaraan"=>array("1230-1"=>"Kredit"), "Peralatan Kantor"=>array("1240"=> "Debit"), "Akumulasi Penyusutan Peralatan Kantor"=>array("1240-1"=>"Kredit")),
             array("Aset Lainnya"=>array("1310"=>"Debit")),
-            array("Utang Dagang"=>array("2110"=>"Kredit"), "Utang Gaji"=>array("2120"=>"Kredit"), "Utang Bank"=>array("2130"=>"Kredit")),
-            array("Obligasi"=>array("2210"=>"Kredit")),
-            array("Modal Disetor"=>array("3100"=>"Kredit"), "Saldo Laba Ditahan"=> array("3110"=>"Kredit"), "Saldo Laba Tahun Berjalan"=>array("3120"=>"Kredit")),
+            array("Utang Usaha"=>array("2110"=>"Kredit"), "Utang Gaji"=>array("2120"=>"Kredit")),
+            array("Utang Bank"=>array("2220"=>"Kredit")),
+            array("Modal Disetor"=>array("3100"=>"Kredit"), "Laba Ditahan"=> array("3110"=>"Kredit"), "Bagi Hasil ke Desa"=> array("3120"=>"Kredit"), "Penambahan Modal"=> array("3130"=>"Kredit")),
             array("Pendapatan Wisata"=> array("4110"=>"Kredit"), "Pendapatan Homestay"=>array("4120"=>"Kredit"), "Pendapatan Resto"=> array("4130"=>"Kredit"), "Pendapatan Event"=> array("4140"=>"Kredit")),
             array("Biaya Gaji"=>array("5110"=>"Debit"), "Biaya Listrik, Air dan Telepon"=>array("5120"=>"Debit"), "Biaya Administrasi dan Umum" =>array("5130"=>"Debit"), "Biaya Pemasaran"=>array("5140"=>"Debit"), "Biaya Perlengkapan Kantor"=>array("5150"=>"Debit"), "Biaya Sewa"=>array("5160"=>"Debit"), "Biaya Asuransi"=>array("5170"=>"Debit"), "Biaya Penyusutan Gedung"=>array("5180"=>"Debit"), "Biaya Penyusutan Kendaraan"=>array("5190"=>"Debit"), "Biaya Penyusutan Peralatan Kantor"=>array("5200"=>"Debit")),
             array("Pendapatan Lain-Lain"=>array("6110"=>"Kredit")),

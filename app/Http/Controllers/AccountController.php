@@ -44,7 +44,6 @@ class AccountController extends Controller
         ->where('id_business', $session)
         ->orderby('parent_code')->get();
         
-        // return dd($account_parent,$business, $session, $getBusiness);
         return view('user.akun', compact('account_parent','business', 'session', 'getBusiness'));
     }
 

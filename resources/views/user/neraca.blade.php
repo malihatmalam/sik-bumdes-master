@@ -71,7 +71,9 @@
                               </div>
                               
                               <div class="col-md-6 mt-4 text-right">
-                                <a href="{{route('export.neraca', ['year' => $dt, 'month' => $month])}}" class="btn btn-primary" target="_blank" id="export">Export</a>
+                                <a href="{{route('export.neraca', ['year' => $dt, 'month' => $month])}}" class="btn btn-primary" target="_blank" id="export">PDF</a>
+                                {{-- Penambahan --}}
+                                <a href="{{route('export.excel.neraca', ['year' => $dt, 'month' => $month])}}" class="btn btn-primary" target="_blank" id="export">EXCEL</a>
                             </div>
                             </div>
                         </div>
@@ -372,6 +374,12 @@
                                   @endif
                                 </strong>
                               </div>
+                            </div>
+                            <div>
+                              <hr>
+                                @if ($sum != ($sum_ekuitas+$sum_biaya))
+                                    <p class="text-danger"><strong>* Belum Sesuai / Tidak Balance / Belum Balance pada Laporan Neraca.</strong></p>
+                                @endif
                             </div>
                         </div>
                     </div>

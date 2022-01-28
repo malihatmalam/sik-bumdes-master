@@ -55,6 +55,11 @@ Route::get('export/perubahan_ekuitas/{year}/{month?}', 'FinancialReportControlle
 Route::get('neraca', 'FinancialReportController@balanceSheet')->name('neraca');
 Route::get('export/neraca/{year}/{month?}', 'FinancialReportController@balanceSheetExport')->name('export.neraca');
 
+/* ======== REPORT ======== */
+Route::get('export_excel/laporan_laba_rugi/{year}/{month?}', 'FinancialReportController@incomeStatementExportExcel')->name('export.excel.laba_rugi');
+Route::get('export_excel/perubahan_ekuitas/{year}/{month?}', 'FinancialReportController@changeInEquityExportExcel')->name('export.excel.perubahan_ekuitas');
+Route::get('export_excel/neraca/{year}/{month?}', 'FinancialReportController@balanceSheetExportExcel')->name('export.excel.neraca');
+
 /* ======== EMPLOYEE ======== */
 Route::resource('karyawan','EmployeeController');
 Route::get('detailEmployee', 'EmployeeController@detailEmployee');
@@ -94,11 +99,14 @@ Route::prefix('admin')->middleware('auth')->name('admin.')->group(function(){
 /* ======== GANTI PASSWORD ======== */
 Route::resource('ganti_password', 'Auth\ChangePasswordController');
 
-Route::get('/', function () {
-    return view('auth.login');
+Route::get('login', function () {
+    return view('auth.login')->name('login');
     
 });
 
+Route::get('/', function () {
+    return view('landing.landingPage'); 
+});
 
 Route::get('/resetpassword', function () {
     $data = User::findOrFail(3);

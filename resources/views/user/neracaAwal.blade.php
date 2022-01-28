@@ -130,6 +130,12 @@
                                     </tr>
                                 </tfoot>
                             </table>
+                            <div>
+                                <hr>
+                                @if ($jumlah_debit != $jumlah_kredit)
+                                    <p class="text-danger"><strong>* Jurnal Belum Seimbang, Mohon Dicek Kembali</strong></p>
+                                @endif
+                            </div>
                         </div>
                     </div>
                     <!-- end content-->

@@ -181,6 +181,9 @@ return [
         //DomPDF
         Barryvdh\DomPDF\ServiceProvider::class,
 
+        //Excel Export
+        Maatwebsite\Excel\ExcelServiceProvider::class,
+
     ],
 
     /*
@@ -236,6 +239,9 @@ return [
 
         // DomPDF
         'PDF' => Barryvdh\DomPDF\Facade::class,
+
+        // ExcelExcel
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
 
     ],
 
